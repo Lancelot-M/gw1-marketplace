@@ -1,0 +1,32 @@
+{% extends 'market/home.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div>
+  <form method="post">
+    {% csrf_token %}
+    <div class="row">
+      <div class="col-4">
+        {{ form.subcategory|as_crispy_field }}
+      </div>
+      <div class="col-8">
+        {{ form.item|as_crispy_field }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        {{ form.total_unit|as_crispy_field }}
+      </div>
+      <div class="col-4">
+        {{ form.money_used|as_crispy_field }}
+      </div>
+      <div class="col-4">
+        {{ form.total_price|as_crispy_field }}
+      </div>
+    </div>
+     {{ form.description|as_crispy_field }}
+    <button type="submit" class="btn btn-success">Add Order</button>
+  </form>
+</div>
+{% endblock %}
