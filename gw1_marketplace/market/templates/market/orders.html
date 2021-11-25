@@ -1,39 +1,5 @@
 {% extends "market/home.html" %}
 {% load static %}
-<!-- 
-<table class="table mt-5 bg-light text-center">
-    <thead>
-        <tr>
-            <th style="width: 15%" scope="col">Item</th>
-            <th style="width: 5%" scope="col">Price</th>
-            <th style="width: 10%" scope="col">Money Used</th>
-            <th style="width: 25%" scope="col">Seller</th>
-            <th style="width: 45%" scope="col">Detail</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Blade</td>
-            <td>2</td>
-            <td>ecto</td>
-            <td>Jean Paul</td>
-            <td>+15%^50 +20/20 +30hp</td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-        </tr>
-    </tbody>
-</table>
- -->
 
 {% block SellOrders %}
 <!-- ============= Items In A Category ============== -->
@@ -61,6 +27,7 @@
         {% endfor %}
     </tbody>
 </table>
+<div>{{ category_selected }}</div>
 <!-- ============= Pagination ============== -->
 <div class="pagination">
     <span class="step-links">

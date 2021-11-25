@@ -51,3 +51,40 @@
 
   }); 
   // DOMContentLoaded  end
+
+// Seach value in url > get url
+function pop_bulle() {
+    $(".search_item").on('click', function() {
+        var item_searched = $("#item_searched").val();
+        if (item_searched == ''){
+            window.alert("PUT THE POTO LA BAS!!");
+            return 0
+        }
+        var url = "/item/" + item_searched + "/1";
+        window.alert(url);
+        window.location.href = url;
+    })
+}
+
+/* Start script*/
+$(document).ready(function() {
+    pop_bulle();
+});
+
+
+
+$("#id_group").change(function () {
+  var url = $("#orderForm").attr("data-category-url");
+  var groupId = $(this).val();
+  
+  $.ajax({
+    url: url,
+    data: {
+      'group': groupId
+    },
+    success: function (data) {
+      $("#id_category").html(data);
+    }
+  });
+
+});

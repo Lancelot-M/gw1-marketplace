@@ -4,13 +4,16 @@
 
 {% block content %}
 <div>
-  <form method="post">
+  <form method="post" id="orderForm" data-category-url="{% url 'ajax_load_categories' %}" novalidate>
     {% csrf_token %}
     <div class="row">
       <div class="col-4">
-        {{ form.subcategory|as_crispy_field }}
+        {{ form.group|as_crispy_field }}
       </div>
-      <div class="col-8">
+      <div class="col-4">
+        {{ form.category|as_crispy_field }}
+      </div>
+      <div class="col-4">
         {{ form.item|as_crispy_field }}
       </div>
     </div>
