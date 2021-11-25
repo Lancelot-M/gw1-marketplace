@@ -18,13 +18,13 @@ class Category(models.Model):
 
 class SellOrder(models.Model):
     """Sell oder of X items"""
-    item = models.CharField(max_length=200)
+    item = models.CharField(max_length=50)
     group = models.ForeignKey(Group, on_delete=models.CASCADE)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     total_unit = models.IntegerField()
     total_price = models.IntegerField()
-    money_used = models.CharField(max_length=100)
-    seller = models.CharField(max_length=200)
+    money_used = models.CharField(max_length=50)
+    seller = models.CharField(max_length=50)
     description = models.CharField(max_length=200)
 
     class Meta:

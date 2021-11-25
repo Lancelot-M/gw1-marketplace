@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+    <head>
+        <meta charset="utf-8" />
+        <title>GW1 Marketplace</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href=" {% static 'market/assets/Guild-Wars-icon.png' %} " />
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <!-- Additionnal CSS -->
+        <link href="{% static 'market/style.css' %}" rel="stylesheet" />
+    </head>
+    <body class="background">
+        <div class="container">
+            
+            <!-- ============= Navbar ============== -->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="/">GW1 Marketplace</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav"  aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="main_nav">
+                        <!-- ============= Left Side ============== -->
+                        <ul class="navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="disable" data-bs-toggle="dropdown">Weapons</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="{% url 'category' 'staffs' %}">Staffs</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'category' 'wands' %}">Wands</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'category' 'bows' %}">Bows</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'category' 'daggers' %}">Daggers</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'category' 'hammers' %}">Hammers</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'category' 'scythes' %}">Scythes</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'category' 'axes' %}">Axes</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'category' 'Swords' %}">Swords</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'category' 'spears' %}">Spears</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'category' 'wands' %}">Shields</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'category' 'wands' %}">Focus</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="disable" data-bs-toggle="dropdown">Craft</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="{% url 'category' 'mods' %}">Mods</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'category' 'runes' %}">Runes</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'category' 'trophies' %}">Trophies</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'category' 'materials' %}">Crafting material</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'category' 'nico' %}">Nicholas the Traveler</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="disable" data-bs-toggle="dropdown">Consumables</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="{% url 'category' 'crocos' %}">Lockpicks</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'category' 'tomes' %}">Tomes</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'category' 'dyes' %}">Dyes</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'category' 'foods' %}">Foods</a>
+                                    <li><a class="dropdown-item" href="{% url 'category' 'alcohols' %}">Alcohols</a>
+                                    <li><a class="dropdown-item" href="{% url 'category' 'consets' %}">Battle Consumables</a>
+                                </ul>
+                            </li>
+                             <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="disable" data-bs-toggle="dropdown">Others</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="{% url 'category' 'golds' %}">Unidentified Gold</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'category' 'pets' %}">Pets</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'category' 'tonics' %}">Tonics</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <!-- ============= Right Side ============== -->
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="disable" data-bs-toggle="dropdown">Business</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="">My Orders</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'add_order' %}">Sell a item</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div> <!-- navbar-collapse.// -->
+                </div> <!-- container-fluid.// -->
+            </nav>
+            <!-- ============= End Navbar ============== -->
+
+            {% block SellOrders %}{% endblock %}
+            {% block content %}{% endblock %}
+            
+        </div>
+        <!-- container //  -->
+
+        <!-- ============= Scripts Storage ============== -->
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+        <!-- on inclut jQuery via CDN -->
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <!-- Additionnal JS-->
+        <script type="text/javascript" src="{% static 'market/scripts.js' %}"></script>
+        <!-- <script type="text/javascript" src="{% static 'market/scripts2.js' %}"></script> -->
+</html>
